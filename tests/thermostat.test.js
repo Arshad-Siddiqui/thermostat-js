@@ -20,6 +20,14 @@ describe('Thermostat', () => {
       thermostat.down()
       expect(thermostat.getTemperature()).toBe(18)
     })
+
+    it('shouldnt go below the minimum which is 10 degrees', () => {
+      const thermostat = new Thermostat()
+      for(let i = 0; i < 15; i++) {
+        thermostat.down()
+      }
+      expect(thermostat.getTemperature()).toBe(10)
+    })
   })
 
   describe('.powerSavingMode', () => {
