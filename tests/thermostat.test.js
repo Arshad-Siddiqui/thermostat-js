@@ -31,5 +31,15 @@ describe('Thermostat', () => {
       }
       expect(thermostat.getTemperature()).toBe(25)
     })
+
+    it('when turned off should limit the temperature to 32 degrees', () => {
+      const thermostat = new Thermostat()
+      thermostat.setPowerSavingMode(false)
+      for (let i = 0; i < 16; i++) {//20 + 16 but capped at 32
+        thermostat.up()
+      }
+
+      expect(thermostat.getTemperature()).toBe(32)
+    })
   })
 })
