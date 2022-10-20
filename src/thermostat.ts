@@ -33,7 +33,7 @@ class Thermostat {
     this.powerSavingMode = setting;
 
     if (this.powerSavingMode && this.temperature > 25) {
-      this.temperature == 25;
+      this.temperature = 25;
     }
   }
 
