@@ -36,6 +36,10 @@ class Thermostat {
       this.temperature == 25;
     }
   }
+
+  reset() {
+    this.temperature = 20;
+  }
 }
 
 module.exports = Thermostat;

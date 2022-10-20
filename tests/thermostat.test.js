@@ -50,4 +50,22 @@ describe('Thermostat', () => {
       expect(thermostat.getTemperature()).toBe(32)
     })
   })
+
+  describe('.reset()', () => {
+    it('should reset the temperature to 20 degrees', () => {
+      const thermostat = new Thermostat()
+      for(let i = 0; i < 5; i++) {
+        thermostat.up()
+      }
+      expect(thermostat.getTemperature()).toBe(25)
+      thermostat.reset()
+      expect(thermostat.getTemperature()).toBe(20)
+      for(let i = 0; i < 5; i++) {
+        thermostat.down()
+      }
+      expect(thermostat.getTemperature()).toBe(15)
+      thermostat.reset()
+      expect(thermostat.getTemperature()).toBe(20)
+    })
+  })
 })
